@@ -1,0 +1,66 @@
+원하는 배열 출력하기
+#include <stdio.h>
+#include<string.h>
+
+int main()
+{
+	int a, b;
+	int i, j;
+	int arr[10][10];
+	char str[10];
+	char zeromatrix[] = "zero";
+	char onesmatrix[] = "one";
+	char diagmatrix[] = "diag";
+
+	printf("종류를 입력하세요: ");
+	gets(str);
+	printf("행의 크기를 입력: ");
+	scanf_s("%d", &a);
+	printf("열의 크기를 입력: ");
+	scanf_s("%d", &b);
+
+
+	if (strcmp(zeromatrix, str) == 0)
+	{
+		printf("zero matrix => \n");
+		for (i = 0; i < a; i++)
+		{
+			for (j = 0; j < b; j++)
+			{
+				arr[i][j] = 0;
+				printf("%d ", arr[i][j]);
+			}
+			printf("\n");
+		}
+	}
+	if (strcmp(onesmatrix, str) == 0)
+	{
+		printf("ones matrix => \n");
+		for (i = 0; i < a; i++)
+		{
+			for (j = 0; j < b; j++)
+			{
+				arr[i][j] = 1;
+				printf("%d ", arr[i][j]);
+			}
+			printf("\n");
+		}
+	}
+	if (strcmp(diagmatrix, str) == 0)
+	{
+		printf("diag matrix => \n");
+		for (i = 0; i < a; i++)
+		{
+			for (j = 0; j < b; j++)
+			{
+				if (i == j)
+					arr[i][j] = 1;
+				else
+					arr[i][j] = 0;
+				printf("%d ", arr[i][j]);
+			}
+			printf("\n");
+		}
+	}
+	return 0;
+}
