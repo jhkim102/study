@@ -1,0 +1,31 @@
+#include<stdio.h>
+int A[1000001];
+
+int main(void)
+{
+	int N;
+	int i;
+
+
+	scanf_s("%d", &N);
+	for (i = 0; i < N; i++)
+	{
+		scanf_s("%d", &A[i]);
+	}
+
+	int Max = A[0];
+	int Min = A[0];
+
+	for (i = 0; i < N; i++)
+	{
+		if (Max < A[i])
+		{
+			Max = A[i];
+		}
+		if (Min > A[i])
+			Min = A[i];
+	}
+
+	printf("%d %d\n", Min, Max);
+	return 0;
+}
