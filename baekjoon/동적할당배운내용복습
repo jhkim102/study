@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+	int N, X;
+	int i;
+	scanf_s("%d %d", &N, &X);
+
+	int* A;
+	A = (int*)malloc(sizeof(int) * N); //동적할당으로 A[N]을 사용하지 않고 정의할수 있게되었음
+
+
+	for (i = 0; i < N; i++)
+	{
+		scanf_s("%d", &A[i]);
+	}
+	for (i = 0; i < N; i++)
+	{
+		if (X > A[i])
+		{
+			printf("%d ", A[i]);
+		}
+	}
+	free(A);
+	return 0;
+}
